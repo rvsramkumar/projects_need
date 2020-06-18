@@ -1,0 +1,8 @@
+---
+- name: Deny SSH access to the DEV users
+  user: 
+    name: "{{ item.value.name }}"
+    groups: denyssh
+    state: present
+  with_dict: "{{ DENIEDSSHUSERS }}"
+  tags: deny

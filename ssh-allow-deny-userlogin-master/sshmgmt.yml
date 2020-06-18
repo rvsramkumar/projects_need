@@ -1,0 +1,17 @@
+---
+- hosts: '{{ hostgroup }}'
+  gather_facts: no
+  vars_files:
+  - accesslist
+  tasks:
+  - name: sync standard sshd_config file to remote server
+    copy:
+      src: sshd_config
+      dest: /etc/ssh/sshd_config
+  - name: restart SSH service
+    service:
+      name: sshd
+      state: restarted
+  roles: 
+    - grant
+    - deny

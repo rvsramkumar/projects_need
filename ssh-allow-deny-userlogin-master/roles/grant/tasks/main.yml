@@ -1,0 +1,8 @@
+---
+- name: Grant SSH access to the DEV users
+  user: 
+    name: "{{ item.value.name }}"
+    groups: allowssh
+    state: present
+  with_dict: "{{ GRANTEDSSHUSERS }}"
+  tags: grant

@@ -1,0 +1,7 @@
+GRANTEDSSHUSERS:
+  user1: { name: 'user1' }
+  user2: { name: 'user2' }
+
+DENIEDSSHUSERS:
+  user3: { name: 'user3' }
+
